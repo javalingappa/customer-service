@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request attributes required to create Address ",
+  "title": "saveShippingService",
+  "type": "object",
+  "required": [
+    "service",
+    "option"
+  ],
+  "properties": {
+    "service": {
+      "description": "Service type",
+      "type": "string",
+      "example": {
+        "service": "Small Saver"
+      }
+    },
+    "option": {
+      "description": "Option of delivery",
+      "type": "string",
+      "example": {
+        "option": "Late Night Delivery"
+      }
+    }
+  }
+}

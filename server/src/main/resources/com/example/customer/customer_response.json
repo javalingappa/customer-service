@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains response attributes required to create product ",
+  "title": "SaveProductResponse",
+  "type": "object",
+  "required": [
+    "customerId",
+    "name",
+    "phone",
+    "locality",
+    "type",
+    "addressType",
+    "address",
+    "cityTownDistrict",
+    "state",
+    "landmark",
+    "altPhone",
+    "service",
+    "option",
+    "postalCode"
+  ],
+  "properties": {
+
+    "customerId": {
+      "description": "Customer Id",
+      "type": "string",
+      "example": {
+        "customerId": "1"
+      }
+    },
+    "name": {
+      "description": "Name of the customer",
+      "type": "string",
+      "example": {
+        "name": "Raghavendra"
+      }
+    },
+    "phone": {
+      "description": "Phone number of the customer",
+      "type": "string",
+      "example": {
+        "phone": "9876543209"
+      }
+    },
+    "postalCode": {
+      "description": "Postal code or pin code of the customer address",
+      "type": "string",
+      "example": {
+        "postalCode": "567890"
+      }
+    },
+    "locality": {
+      "description": "Locality of the customer",
+      "type": "string",
+      "example": {
+        "locality": "Akshayanagara"
+      }
+    },
+    "address": {
+      "description": "Locality of the customer",
+      "type": "string",
+      "example": {
+        "address": "Akshayanagara 2nd block tc palya"
+      }
+    },
+    "cityTownDistrict": {
+      "description": "City or Town or District of the customer",
+      "type": "string",
+      "example": {
+        "cityTownDistrict": "Bengaluru"
+      }
+    },
+    "state": {
+      "description": "State of the customer",
+      "type": "string",
+      "example": {
+        "state": "Karnataka"
+      }
+    },
+    "landmark": {
+      "description": "Landmark for the customer address",
+      "type": "string",
+      "example": {
+        "landmark": "Karnataka"
+      }
+    },
+    "altPhone": {
+      "description": "Alternate Phone number of the customer",
+      "type": "string",
+      "example": {
+        "altPhone": "9876543209"
+      }
+    },
+    "type": {
+      "description": "Specify From or To Address",
+      "type": "string",
+      "example": {
+        "type": "From"
+      }
+    },
+    "addressType": {
+      "description": "Home or WOrk",
+      "type": "string",
+      "example": {
+        "addressType": "Home"
+      }
+    },
+    "service": {
+      "description": "Service type",
+      "type": "string",
+      "example": {
+        "service": "Small Saver"
+      }
+    },
+    "option": {
+      "description": "Option of delivery",
+      "type": "string",
+      "example": {
+        "option": "Late Night Delivery"
+      }
+    }
+  }
+}

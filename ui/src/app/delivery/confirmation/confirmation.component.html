@@ -1,0 +1,18 @@
+<mat-card class="mycard">
+        <!-- Title of an Card -->
+        <mat-card-title>
+            Your Order Confirmation
+        </mat-card-title>
+        <br/>
+        <mat-card-content>
+            <div class="processing" *ngIf="!isProcessed else processed">
+                <mat-spinner diameter="45"></mat-spinner> 
+                <h3 class="processing-text mat-h3">Please wait while your order is being processed...</h3></div>
+            <ng-template #processed>
+                <div class="processed">
+                    <mat-icon class="mat-icon-rtl-mirror processed-icon">check_circle_outline</mat-icon>
+                    <h2 class="processed-text mat-h2">Your order is successfully processed.</h2>
+                </div>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>

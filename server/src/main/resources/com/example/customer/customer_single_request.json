@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request attributes required to create Address ",
+  "title": "saveShippingService",
+  "type": "object",
+  "required": [
+    "customer",
+    "address",
+    "service"
+  ],
+  "properties": {
+    "customer": {
+      "description": "Customer Details",
+      "type": "object",
+      "$ref": "./customer_request.json"
+    },
+    "address": {
+      "description": "Customer address Details",
+      "type": "array",
+      "items": {
+          "$ref": "./address_request.json"
+      }
+    },
+    "service": {
+      "description": "Shipping Service Details",
+      "type": "object",
+        "$ref": "./shipping_service_request.json"
+    }
+  }
+}

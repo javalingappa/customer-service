@@ -1,0 +1,582 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Customer Shipping Service",
+    "version": "1.0.0",
+    "description": "Customer services for adding and searching/modifying customer database.",
+    "contact": {
+      "name": "Raghavendra"
+    },
+    "license": {
+      "name": "Commercial"
+    }
+  },
+  "basePath": "/v1/api",
+  "produces": [
+    "application/json"
+  ],
+  "responses": {
+    "x-comment": "these are the common response types. Its easier to keep this section in each service.",
+    "ServiceError": {
+      "description": "general service error",
+      "schema": {
+        "$ref": "./service_error.json"
+      }
+    }
+  },
+  "paths": {
+
+    "/customer": {
+      "post": {
+        "operationId": "saveCustomer",
+        "summary": "Saves customer ",
+        "description": "This API saves customer to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "Contains customer  needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./customer_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/customer/address": {
+      "post": {
+        "operationId": "saveCustomerAddress",
+        "summary": "Saves customer address",
+        "description": "This API saves customer address to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "Customer id",
+            "required": "true"
+          },
+          {
+            "name": "customerAddress",
+            "in": "body",
+            "description": "Contains customer address that needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./address_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/customer/shipping/service": {
+      "post": {
+        "operationId": "saveCustomerShippingService",
+        "summary": "Saves customer address",
+        "description": "This API saves customer address to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "customer id",
+            "required": "true"
+          },
+          {
+            "name": "shippingService",
+            "in": "body",
+            "description": "Contains customer shipping service details that needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./shipping_service_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+
+
+    "/customer/update": {
+      "put": {
+        "operationId": "updateCustomer",
+        "summary": "Update customer ",
+        "description": "This API update customer to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "Contains customer  needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./customer_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/customer/address/update": {
+      "put": {
+        "operationId": "updateCustomerAddress",
+        "summary": "Update customer address",
+        "description": "This API update customer address to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "customer id",
+            "required": "true"
+          },
+          {
+            "name": "customerAddress",
+            "in": "body",
+            "description": "Contains customer address that needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./address_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/customer/shipping/service/update": {
+      "put": {
+        "operationId": "updateCustomerShippingService",
+        "summary": "update customer address",
+        "description": "This API update customer address to database",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "customer id",
+            "required": "true"
+          },
+          {
+            "name": "shippingService",
+            "in": "body",
+            "description": "Contains customer shipping service details that needs to be saved",
+            "required": "true",
+            "schema": {
+              "$ref": "./shipping_service_request.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+
+    "/customer/details": {
+      "get": {
+        "operationId": "getCustomerDetailsById",
+        "summary": "This API retrieves Customer  based on given customer id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "Retrieves all the Customer  based on given customer id",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./customer_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+    "/customer/list": {
+      "get": {
+        "operationId": "getAllCustomers",
+        "summary": "This API retrieves all the customers ",
+        "description": "",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./customer_response.json"
+              }
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+
+
+    "/customer/delete": {
+      "delete": {
+        "operationId": "deleteCustomerDetailsById",
+        "summary": "This API deletes Customer  based on given customer id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "delete record by customer id",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./customer_delete_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+
+    "/customer/delete/address": {
+      "delete": {
+        "operationId": "deleteAddressDetailsByCustomerId",
+        "summary": "This API deletes Customer  address based on given customer id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "delete record by customer id",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./customer_delete_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    },
+
+    "/customer/delete/shipping/service": {
+      "delete": {
+        "operationId": "deleteCustomerShippingServiceByCustomerId",
+        "summary": "This API deletes Customer shipping service based on given customer id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "query",
+            "description": "delete record by customer id",
+            "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully processed the request",
+            "schema": {
+              "type": "object",
+              "$ref": "./customer_delete_response.json"
+            }
+          },
+          "400": {
+            "description": "Missing mandatory parameters or invalid request that could not be processed.",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "500": {
+            "description": "Could not process the request due to Internal server errors",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "502": {
+            "description": "Could not access the database or server resources to process the request",
+            "schema": {
+              "$ref": "./service_error.json"
+            }
+          },
+          "default": {
+            "description": "Not yet Implemented"
+          }
+        }
+      }
+    }
+  }
+}

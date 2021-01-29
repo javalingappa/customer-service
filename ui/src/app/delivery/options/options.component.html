@@ -1,0 +1,39 @@
+<mat-card class="mycard">
+    <!-- Title of an Card -->
+    <mat-card-title>
+        Shipping Serivce
+    </mat-card-title>
+    <br/>
+    <mat-card-content>
+        <form [formGroup]="shippingServiceConfirmGroup" (ngSubmit)="shippingServiceConfirmSubmit()" novalidate>
+            <div class="flex-grid">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Services</mat-label>
+                        <mat-select placeholder="Shipping Service" formControlName="services" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option value="Priority Overnight">Priority Overnight</mat-option>
+                            <mat-option value="Small Saver">Small Saver</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Options</mat-label>
+                        <mat-select placeholder="Options" formControlName="options" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option value="Early Morning Delivery">Early Morning Delivery</mat-option>
+                            <mat-option value="Late Night Delivery">Late Night Delivery</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="flex-grid">
+                <div class="col nextButton">
+                    <button type="submit" mat-raised-button class="savefromaddress">Confirm Shipping Order</button>
+                </div>
+            </div>
+        </form>
+
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request attributes required to create Address ",
+  "title": "saveShippingService",
+  "type": "object",
+  "required": [
+    "name",
+    "phone",
+    "altPhone",
+    "customerType"
+  ],
+  "properties": {
+    "name": {
+      "description": "Name of the customer",
+      "type": "string",
+      "example": {
+        "name": "Raghavendra"
+      }
+    },
+    "phone": {
+      "description": "Phone number of the customer",
+      "type": "string",
+      "example": {
+        "phone": "9876543209"
+      }
+    },
+      "altPhone": {
+      "description": "Alternate Phone number of the customer",
+      "type": "string",
+      "example": {
+        "altPhone": "9876093209"
+      }
+    },
+    "customerType": {
+      "description": "FROM or TO",
+      "type": "string",
+      "example": {
+        "customerType": "FROM"
+      }
+    }
+    }
+
+}

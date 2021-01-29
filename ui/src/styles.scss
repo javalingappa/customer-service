@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 14px;
+    background-color: #f1f3f6;
+    color: #212121;
+    line-height: 1.4;}
+.flex-grid {
+  display: flex;
+  margin-bottom: -10px;
+  flex-flow: row wrap;
+}
+.flex-grid .col {
+flex: 1;
+}

@@ -1,0 +1,41 @@
+.mycard {
+    margin: 0 auto;
+    width: 50%;
+}
+.mat-form-field{
+    width: 90%;
+}
+.mataddress{
+    width: 95%;
+}
+#example-radio-group-label{
+    color: rgba(0,0,0,.6);
+    margin-bottom: 5px;
+}
+.addresstypecol{
+    margin-left: 10px;
+}
+.nextButton{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.savefromaddress{
+    width: 205px;
+    height: 50px;
+}
+.clearButton {
+    height: 50px;
+    margin-left: 10px;
+    width: 90px;
+}
+@media(max-width: 815px) {
+    .mycard {
+      width: 90%;
+    }
+  }
+
+  @media(max-width: 568px) {
+    .savefromaddress{
+        width: 150px;
+    }
+}  

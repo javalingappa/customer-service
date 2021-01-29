@@ -1,0 +1,30 @@
+.mycard {
+    margin: 0 auto;
+    width: 40%;
+}
+.mat-form-field{
+    width: 90%;
+}
+
+.processing {
+    position: relative;
+}
+.processing-text{
+    position: absolute;
+    top: 16px;
+    left: 68px;
+}
+
+.processed {
+    position: relative;
+}
+
+.processed-icon {
+    color: green; 
+    font-size: 60px;
+}
+.processed-text {
+    position: absolute;
+    left: 64px;
+    top: 14px;
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>customer-service</artifactId>
+        <groupId>com.example.customer</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ui</artifactId>
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+        <checkstyle.skip>true</checkstyle.skip>
+        <forntend-maven-plugin-version>1.6</forntend-maven-plugin-version>
+    </properties>
+
+    <build>
+        <!--Copying the angular build folder in ui-src folder-->
+        <resources>
+            <resource>
+                <directory>ui-src</directory>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!--Plugin for creating UI jar which will be refer in appgateway as dependency-->
+
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${forntend-maven-plugin-version}</version>
+                <configuration>
+                    <workingDirectory>${project.basedir}</workingDirectory>
+                    <npmVersion>6.4.1</npmVersion>
+                    <nodeVersion>v10.14.2</nodeVersion>
+                </configuration>
+                <!--npm excutions command-->
+                <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                    </execution>
+                    <execution>
+                        <id>npm install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request attributes required to create Address ",
+  "title": "saveShippingService",
+  "type": "object",
+  "required": [
+    "status",
+    "message"
+  ],
+  "properties": {
+    "status": {
+      "description": "SUCCESS",
+      "type": "string",
+      "example": {
+        "status": "SUCCESS"
+      }
+    },
+    "message": {
+      "description": "success message",
+      "type": "string",
+      "example": {
+        "message": "Deleted successfully"
+      }
+    },
+    "statusCode": {
+      "description": "HTTP Status Code",
+      "type": "integer",
+      "example": {
+        "statusCode": 200
+      }
+    }
+  }
+}

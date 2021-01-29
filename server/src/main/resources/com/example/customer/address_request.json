@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The object contains request attributes required to create Address ",
+  "title": "saveAddress",
+  "type": "object",
+  "required": [
+    "postalCode",
+    "locality",
+    "address",
+    "cityTownDistrict",
+    "state",
+    "landmark",
+    "addressType"
+  ],
+  "properties": {
+
+    "postalCode": {
+      "description": "Postal code or pin code of the customer address",
+      "type": "string",
+      "example": {
+        "postalCode": "567890"
+      }
+    },
+    "locality": {
+      "description": "Locality of the customer",
+      "type": "string",
+      "example": {
+        "locality": "Akshayanagara"
+      }
+    },
+    "address": {
+      "description": "Locality of the customer",
+      "type": "string",
+      "example": {
+        "address": "Akshayanagara 2nd block tc palya"
+      }
+    },
+    "cityTownDistrict": {
+      "description": "City or Town or District of the customer",
+      "type": "string",
+      "example": {
+        "cityTownDistrict": "Bengaluru"
+      }
+    },
+    "state": {
+      "description": "State of the customer",
+      "type": "string",
+      "example": {
+        "state": "Karnataka"
+      }
+    },
+    "landmark": {
+      "description": "Landmark for the customer address",
+      "type": "string",
+      "example": {
+        "landmark": "Karnataka"
+      }
+    },
+    "addressType": {
+      "description": "Specify From or To Address",
+      "type": "string",
+      "example": {
+        "addressType": "From"
+      }
+    }
+  }
+}
